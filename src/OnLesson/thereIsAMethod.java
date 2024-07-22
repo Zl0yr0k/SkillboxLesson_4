@@ -28,7 +28,7 @@ public class thereIsAMethod {
         int addHourFor = new Scanner(System.in).nextInt();
         System.out.println("Введите сколько минут добавить");
         int addMinutesFor = new Scanner(System.in).nextInt();
-        System.out.println(addDateAndTime(addDateFor,addHourFor,addMinutesFor));
+        System.out.println(addDay(addDateFor,addHourFor,addMinutesFor));
 
 
         while (true) {
@@ -58,7 +58,7 @@ public class thereIsAMethod {
         return  LocalDate.now().plusDays(addDaysFor);
     }
 
-    public static LocalDateTime addDateAndTime (int addDaysFor, int addHourFor, int addMinuteFor) {
+    public static LocalDateTime addDay (int addDaysFor, int addHourFor, int addMinuteFor) {
         LocalDateTime timeNow = LocalDateTime.now();
 
         timeNow =  LocalDateTime.from(timeNow).plusDays(addDaysFor);
