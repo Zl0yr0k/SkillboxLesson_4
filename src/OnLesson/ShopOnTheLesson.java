@@ -14,6 +14,8 @@ public class ShopOnTheLesson {
         print("Содержимое корзины: ");
         clear();
         print("Содержимое:");
+        thereIsAMethod time = new thereIsAMethod();
+        System.out.println(time.getDay());
     }
 
     public static int getPrice () {
