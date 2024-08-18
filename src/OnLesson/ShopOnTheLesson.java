@@ -3,41 +3,29 @@ package OnLesson;
 import java.util.Scanner;
 
 public class ShopOnTheLesson {
-    private static String items = "";
-    private static int totalPrice;
-    private static boolean commandOfExit = true;
+    private  String items = "";
+    private  int totalPrice;
+    private  boolean commandOfExit = true;
 
+   public void cycleOfGetNameAndGetPrice() {
+       while (commandOfExit) {
+           add(getName(), getPrice());
+       }
+   }
 
-    public static void main(String[] args) {
-
-        while (commandOfExit) {
-            add(getName(), getPrice());
-            }
-
-
-        System.out.println(getTotalPrice());
-        printTotalPrice();
-        System.out.println();
-        print("Содержимое корзины: ");
-        clear();
-        print("Содержимое:");
-        thereIsAMethod time = new thereIsAMethod();
-        System.out.println(time.getDay());
-    }
-
-    public static void add (String name, int price ) {
+    public void add (String name, int price ) {
 
         items = items + " \n" + name + " - " + price;
         totalPrice = totalPrice + price;
     }
 
-    public static int getPrice () {
+    public int getPrice () {
         System.out.println("Введите цену: ");
         int price = new Scanner(System.in).nextInt();
         return price;
     }
 
-    public static String getName () {
+    public String getName () {
         System.out.println("Введите наименование продукта: ");
         Scanner na = new Scanner(System.in);
         String name = na.nextLine();
@@ -49,20 +37,20 @@ public class ShopOnTheLesson {
     }
 
 
-    public static void printTotalPrice () {
+    public void printTotalPrice () {
         System.out.println(totalPrice);
     }
 
-    public static int getTotalPrice() {
+    public int getTotalPrice() {
         return totalPrice;
     }
 
-    public static void clear () {
+    public void clear () {
         items = "";
         totalPrice = 0;
     }
 
-    public static void print (String title) {
+    public void print (String title) {
         System.out.println(title);
         if (items.isEmpty()) {
             System.out.println("Корзина пуста");
