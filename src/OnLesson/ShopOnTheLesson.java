@@ -7,6 +7,17 @@ public class ShopOnTheLesson {
     private  int totalPrice;
     private  boolean commandOfExit = true;
 
+    public ShopOnTheLesson() {
+        System.out.println("Список товаров");
+    }
+    public ShopOnTheLesson (int time, int timeNow) {
+        this();
+        if (time > timeNow) {
+            clear();
+            return;
+        }
+    }
+
    public void cycleOfGetNameAndGetPrice() {
        while (commandOfExit) {
            add(getName(), getPrice());
@@ -14,9 +25,16 @@ public class ShopOnTheLesson {
    }
 
     public void add (String name, int price ) {
+        add(name, price, 1);
 
-        items = items + " \n" + name + " - " + price;
-        totalPrice = totalPrice + price;
+    }
+    public  void add (String name, int price, int count) {
+        add(name,price,count,1);
+    }
+
+    public void add (String name, int price, int count, int time) {
+        items = items + " \n" + name + " - " + count + " - " + price + " - " + time;
+        totalPrice = totalPrice + count * price;
     }
 
     public int getPrice () {
