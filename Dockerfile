@@ -1,5 +1,4 @@
-FROM openjdk:17
+FROM openjdk:22
 WORKDIR /opt/app
-COPY ./src/OnLesson/* .
-RUN javac Main.java
-CMD [ "java", "Main.class" ]
+COPY . .
+CMD [ "java -classpath ./src OnLesson.Main " ]
